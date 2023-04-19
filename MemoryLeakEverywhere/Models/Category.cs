@@ -1,9 +1,7 @@
 ﻿namespace MemoryLeakEverywhere.Models
 {
-    public class RandomItem
+    public class Category
     {
         public string Name { get; set; }
-
-        public string Image { get; set; }
     }
 }

@@ -4,8 +4,24 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     BackgroundColor="White"
     x:Class="MemoryLeakEverywhere.Views.CollectionViewSamplePage"
-    Title="CollectionViewSamplePage">
+    Title="CollectionViewSamplePage"
+    x:Name="_CollectionViewSamplePage">
     <VerticalStackLayout>
+        <CarouselView MaximumHeightRequest="200"
+            ItemsSource="{Binding Categories}"
+            VerticalOptions="Fill"
+            HorizontalOptions="Fill">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Button
+                        Text="{Binding Name}"
+                        Command="{Binding Path=BindingContext.ChangeCategoryCommand, Source={x:Reference _CollectionViewSamplePage}}"
+                        FontSize="20"
+                        TextColor="Black"/>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        
         <CollectionView
             ItemsSource="{Binding RandomItems}"
             VerticalOptions="Fill"
@@ -32,7 +48,7 @@
                                     HeightRequest="130"
                                     WidthRequest="100"
                                     Aspect="AspectFit"
-                                    Source="dotnet_bot.png"/>
+                                    Source="{Binding Image}"/>
 
                                 <Image
                                     VerticalOptions="End"
