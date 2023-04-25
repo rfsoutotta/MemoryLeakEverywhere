@@ -21,7 +21,7 @@ namespace MemoryLeakEverywhere.ViewModels
             }
         }
 
-        private void LoadData()
+        public void LoadData()
         {
             for (var i = 0; i < 50; i++)
             {
@@ -31,5 +31,6 @@ namespace MemoryLeakEverywhere.ViewModels
                 });
             }
         }
+
     }
 }

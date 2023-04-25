@@ -13,7 +13,7 @@ namespace MemoryLeakEverywhere.ViewModels
 
         public ICommand NavigateToCollectionViewSampleCommand => new Command(async () => await NavigateToCollectionViewSample());
 
-        private async Task NavigateToCollectionViewSample()
+        public async Task NavigateToCollectionViewSample()
         {
             var parameters = new Dictionary<string, object>()
             {
@@ -40,13 +40,7 @@ namespace MemoryLeakEverywhere.ViewModels
 
         private void LoadData()
         {
-            for (var i = 0; i < 50; i++)
-            {
-                RandomItems.Add(new RandomItem
-                {
-                    Name = $"Item {i}"
-                });
-            }
+            
         }
     }
 }
