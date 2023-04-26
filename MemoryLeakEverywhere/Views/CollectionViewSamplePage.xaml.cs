@@ -17,4 +17,10 @@ public partial class CollectionViewSamplePage : ContentPage
         get => _parameters;
         set => _parameters = value;
     }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        ((CollectionViewSampleViewModel)BindingContext).OnAppearing();
+    }
 }
